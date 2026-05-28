@@ -1,16 +1,23 @@
-import Header from "./Header/Header"
-import NavBar from "./NavBar/NavBar"
-import Features from "./Features/Features"
-import Services from "./Services/Services"
-import services from "./Services/Service.js"
+import Header from "./HomepageComp/Header/Header.jsx"
+import NavBar from "./HomepageComp/NavBar/NavBar.jsx"
+import Features from "./HomepageComp/Features/Features.jsx"
 
-export default function Homepage(){
-  return(
+// Single reusable carousel component
+import CarousalList from "./HomepageComp/CarousalList/CarousalList.jsx"
+
+// Data sources
+import services from "./HomepageComp/CarousalList/Service.js"
+import spotlight from "./HomepageComp/CarousalList/Spotlight.js"
+
+
+export default function Homepage() {
+  return (
     <>
       <Header />
       <NavBar />
       <Features />
-      <Services services={services} />
+      <CarousalList data={services} MainTitle="Featured Services" />
+      <CarousalList data={spotlight} MainTitle="Merchant Spotlight" />
     </>
   )
 }
