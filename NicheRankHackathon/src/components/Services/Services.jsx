@@ -1,25 +1,48 @@
+import "./Services.css"
 
 export default function Services({services}){
-  const serviceItems = services[0]
+  const serviceItems = services?.[0] ?? {}
+
   return(
     <section>
       <div className="service-container">
-        <p>Featured Services</p>
+
+        {/* Section header */}
+        <div className="service-header">
+          <p className="section-title">Featured Services</p>
+          <a href="#" className="view-more-btn">View more</a>
+        </div>
+
+        {/* Cards */}
         <div className="card-container">
           {
             Object.keys(serviceItems).map((key) => {
-              const {id, overlay, image, title} = serviceItmes[key];
+              const {overlay, image, title} = serviceItems[key];
               return(
-                <div className="card" key = {key}>
-                  <div className="overlay"><p>{overlay}</p></div>
-                  <div className="image"><img src={image}></img></div>
-                  <div className="title"><p>{title}</p></div>
-                  <div className="bottom"><a href="#">View Details</a></div>
+                <div className="card" key={key}>
+                  {/* Image section — overlay badge sits inside here */}
+                  <div className="image">
+                    <div className="overlay"><p>{overlay}</p></div>
+                    <img src={image} alt={title} />
+                  </div>
+                  {/* White bottom panel */}
+                  <div className="bottom-overlay">
+                    <div className="title"><p>{title}</p></div>
+                    <div className="bottom"><a href="#">View Details</a></div>
+                  </div>
                 </div>
               )
-            }) 
+            })
           }
+
+          {/* Carousel arrow */}
+          <button className="carousel-arrow" aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
+
       </div>
     </section>
   )
