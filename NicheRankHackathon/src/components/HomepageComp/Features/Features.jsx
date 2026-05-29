@@ -1,7 +1,22 @@
 import "./Features.css"
+import { useState, useEffect } from "react";
+
 import { MdOutlineArrowForwardIos } from "react-icons/md";
+import image1 from "../../../assets/carousal/banner1.webp";
+import image2 from "../../../assets/carousal/banner2.webp";
 
 export default function Features(){
+
+  const [current, setCurrent] = useState(0);
+  const slides = [image1, image2];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return(
     <aside>
       <div className="features">
@@ -9,7 +24,7 @@ export default function Features(){
           <ul className="feature-list">
             <div className="items">
               <li>Topup & recharge</li>
-              <span><MdOutlineArrowForwardIos /></span>
+              <span className=""><MdOutlineArrowForwardIos /></span>
             </div>
 
             <div className="items">
@@ -50,7 +65,11 @@ export default function Features(){
         </div>
 
         <div className="slideshow">
-          <p>hello</p>
+          <img
+            src={slides[current]}
+            alt={`Slide ${current + 1}`}
+            style={{ width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.5s ease" }}
+          />
         </div>
       </div>
 

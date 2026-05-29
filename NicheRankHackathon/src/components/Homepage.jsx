@@ -2,7 +2,7 @@ import Header from "./HomepageComp/Header/Header.jsx"
 import NavBar from "./HomepageComp/NavBar/NavBar.jsx"
 import Features from "./HomepageComp/Features/Features.jsx"
 
-// Single reusable carousel component
+// Single reusable carousal list
 import CarousalList from "./HomepageComp/CarousalList/CarousalList.jsx"
 
 // Data sources

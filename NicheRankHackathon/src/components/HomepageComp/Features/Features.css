@@ -8,8 +8,10 @@ aside{
   width: 1170px;
   margin-top: 15px;
   padding: 0 15px 0 15px;
+  /* background: red; */
   display: flex;
   gap: 20px;
+  max-height: 343px;
 }
 
 .sidebar{
@@ -42,7 +44,7 @@ aside{
   background: white;
   height: 20px;
   flex: 1;
-  height: inherit;
+  height: 100%;
   border-radius: 5px;
   box-shadow: 0 1px 6px 1px #e6eaf8;
 }
