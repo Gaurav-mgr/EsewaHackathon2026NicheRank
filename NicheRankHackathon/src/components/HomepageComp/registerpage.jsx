@@ -20,13 +20,16 @@ export default function EsewaRegistration({ onClose }) {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         .esewa-overlay {
-          min-height: 100vh;
+          position: fixed;
+          inset: 0;
           background: rgba(0,0,0,0.45);
           display: flex;
           align-items: center;
           justify-content: center;
           font-family: 'Inter', sans-serif;
           padding: 20px;
+          z-index: 1000;
+          overflow-y: auto;
         }
 
         .esewa-modal {

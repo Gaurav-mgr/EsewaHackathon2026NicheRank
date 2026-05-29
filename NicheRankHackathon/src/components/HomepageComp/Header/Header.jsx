@@ -24,7 +24,7 @@ export default function Header({ onRegister }) {
 
             <div className="buttons">
               <button className="btn-login">Login</button>
-              <button className="btn-register" onClick={onRegister}><a href='HomepageComp/registerpage'>Register</a></button>
+              <button className="btn-register" onClick={onRegister}>Register</button>
             </div>
           </div>
           <a href="#">Forgot password?</a>
