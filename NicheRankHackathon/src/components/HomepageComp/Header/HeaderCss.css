@@ -63,7 +63,12 @@ header {
 .search-wrap {
   flex: 1;
   max-width: 470px;
+  position: relative;
   /* background: white; */
+}
+
+.user-id-container, .user-pass-container{
+  position: relative;
 }
 
 .search-wrap .search-icon{
@@ -91,6 +96,22 @@ header {
   display: flex;
   gap: 5px;
   max-width: 370px;
+}
+
+.user-id-icon, .user-pass-icon{
+  position: absolute;
+  height: 15px;
+  width: 13px;
+  top: 8px;
+  left: 8px;
+}
+
+.sch-icon{
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 8px;
+  left: 8px;
 }
 
 .user-auth input{

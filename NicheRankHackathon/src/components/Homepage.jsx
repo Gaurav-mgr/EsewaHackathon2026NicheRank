@@ -16,7 +16,7 @@ export default function Homepage({ onRegister }) {
       <Header onRegister={onRegister} />
       <NavBar />
       <Features />
-      <CarousalList data={services} MainTitle="Featured Services" />
+      <CarousalList data={services} MainTitle="Featured Services" />  
       <CarousalList data={spotlight} MainTitle="Merchant Spotlight" />
     </>
   )
