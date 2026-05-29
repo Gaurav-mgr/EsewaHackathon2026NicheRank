@@ -10,10 +10,10 @@ import services from "./HomepageComp/CarousalList/Service.js"
 import spotlight from "./HomepageComp/CarousalList/Spotlight.js"
 
 
-export default function Homepage() {
+export default function Homepage({ onRegister }) {
   return (
     <>
-      <Header />
+      <Header onRegister={onRegister} />
       <NavBar />
       <Features />
       <CarousalList data={services} MainTitle="Featured Services" />
